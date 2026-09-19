@@ -17,6 +17,7 @@ jobs:
           git add public.json
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "Update presets"
+            git pull --rebase origin main
             git push
           else
             echo "No changes to commit"
