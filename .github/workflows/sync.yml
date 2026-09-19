@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: curl -L "https://script.google.com/macros/s/AKfycbzdYJePYPJP6KABSCpYQfIAb04eXpq6BK9E0HW9OhUYGQkHy0zs71SSnKewEyChtKixbw/exec" -o public.json
+      run: curl -L "${{ secrets.APPSCRIPT_URL }}" -o public.json
       - run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
