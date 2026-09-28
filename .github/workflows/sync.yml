@@ -18,6 +18,8 @@ jobs:
           git config --local user.name "GitHub Action"
           git add public.json
           if [ -n "$(git status --porcelain)" ]; then
+            date +%s > version.txt
+            git add version.txt
             git commit -m "Update presets"
             git pull --rebase origin main
             git push
